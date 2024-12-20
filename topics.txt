@@ -73,6 +73,14 @@
  // validate Request 
  // types :  inbuilt Middleware, cutom Middleware, All, single request.
 
+// backend have three Layers
+// Models
+// controllers
+// Routes
+
+//Order of development
+// M-C-R
+
 
 
 

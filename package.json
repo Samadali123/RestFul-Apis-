@@ -1,0 +1,24 @@
+{
+  "name": "cls",
+  "version": "1.0.0",
+  "description": "Idea App RestApis",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "app": "npm server.js"
+  },
+  "keywords": [
+    "IdeaApp",
+    "RestApis",
+    "Apis",
+    "Backend",
+    "Node.js",
+    "Express.js"
+  ],
+  "author": "Syed Samad Ali",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
