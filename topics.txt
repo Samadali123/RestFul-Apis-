@@ -1,0 +1,83 @@
+// Creating a Restful APis using Node.js and Express.js
+
+// API : Application programming Interface its like a waitor in the restaurant which take food from the kitchen and seve to the customers
+// waitor : Apis which talks either frontend to backend or Between Multiple Apps 
+// App1  <Apis> App2
+
+
+// Multiple ways to make Apis
+
+// Soap : simple object access protocol 
+// it talks to Multiple apps and send data in the fom of a bits
+// eg : like one app written in java , another app written in python
+// its first converts java code to xml , then transer using bits 0,1, and then other app reciever xml then convert in theri langauge of programming.
+
+// in Xml : 90% of data are meta data which is heavy in size loading isssues
+// Soap only supports xml format 
+
+
+// RestApis
+// after soap becoz it is heavy in size which leades to performance issues in the apps
+// then Rest comes in the picture
+
+// Rest is practical and flexible
+// It supports Multiple formats to transer data Json, Xml, python, java etc
+// Rest Stands for a Representational state transfer protocol
+// Rest have Multiple Http method or verbs for making Apis
+// Post: create data
+// Get : retrives data
+// Put : Update the data
+// Delete : Delete the data
+
+
+// it also called as crud operations in Apis
+
+// how make APis ?
+// if we want to meet someone we atleast know their address.
+// like my address : /Earth/Asia/India/Mp/Bhopal/city/Xyz
+
+// like that for communication between the apps we have to know the address in Apis
+
+// Eg : we have to a movie app
+// Uri : uniform resuourse Identifier, its only thing from which we talk to apps using Apis
+// 127.0.0.1/3000/mba/movies/Api/v1/data
+// first ip address/port number/appname,Apis,version,route
+
+// we make crud in RestApis
+// C: create: Post call
+// R: Read : Get Call
+// U: Update : Put call
+// D: Delete : Delete Call
+
+//Creating a  Rest Api endpoint to create, read,update, delete movie
+// create Movie:  Post(http verb) 127.0.01:3000/mvs/movies(uri)
+//  get movies : Get 127.0.01:3000/mvs/movies/dhoom
+// update movie : 127.0.01:3000/mvs/movies/dhoom
+// Delete movie : 127.0.01:3000/mvs/movies/dhoom
+
+// Restful Uri : https verb(post,get,put,delete) /uri
+
+// Idea App: Restful Apis
+// create Idea : Post 127.0.0.1:3000/ideapp/v1/ideas
+// Get Idea : Get  127.0.0.1:3000/ideapp/v1/ideas
+// Update Idea : Put 127.0.0.1:3000/ideapp/v1/ideas
+// Delete Idea = Delete 127.0.0.1:3000/ideapp/v1 /ideas
+
+
+// Middleware : Act as a Middleman
+// Hospital :Weak Men
+ Reception <Vitals> Blood test
+ Doctor
+
+ // Middleware function Includes : Request, response, and Next object.
+ // validate Request 
+ // types :  inbuilt Middleware, cutom Middleware, All, single request.
+
+
+
+
+
+
+
+
+
