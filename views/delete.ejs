@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Idea</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-red-600 text-white py-6 shadow-md">
+    <h1 class="text-center text-3xl font-extrabold">Delete Idea</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <p class="text-lg font-medium text-center mb-6">Are you sure you want to delete the idea "<span class="font-bold text-red-600"><%= idea.idea_name %></span>"?</p>
+      
+      <!-- Confirmation buttons -->
+      <div class="flex justify-center gap-4">
+        <button id="deleteButton" class="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition">Delete</button>
+        <a href="/" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition">Cancel</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script to handle deletion -->
+  <script>
+    document.getElementById('deleteButton').addEventListener('click', async () => {
+      const id = "<%= idea.id %>"; // Use the idea's ID dynamically
+      const confirmed = confirm(`Are you sure you want to delete the idea "${"<%= idea.idea_name %>"}"?`);
+
+      if (confirmed) {
+        try {
+          const response = await axios.delete(`/ideaApp/v1/ideas/${id}`);
+
+          alert('Idea deleted successfully!');
+          window.location.href = '/'; // Redirect to the ideas list page
+        } catch (error) {
+          if (error.response) {
+            // Server responded with a status other than 2xx
+            console.error('Server Error:', error.response.data);
+            alert(`Error: ${error.response.data.message || 'Failed to delete idea'}`);
+          } else if (error.request) {
+            // No response received
+            console.error('No Response:', error.request);
+            alert('No response from server. Please try again later.');
+          } else {
+            // Error setting up the request
+            console.error('Error:', error.message);
+            alert('An unexpected error occurred. Please try again.');
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

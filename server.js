@@ -2,16 +2,23 @@ const express = require('express');
 
 const app = express();
 
-app.use(mymiddleware); // for all Requests
+// app.use(mymiddleware); // for all Requests
+
+
+// Middleware to parse JSON and URL-encoded data
+app.use(express.json()); // For JSON payloads
+app.use(express.urlencoded({ extended: true })); // For form submissions
+
+app.set("view engine", "ejs");
+// for ejs setup
+app.use(express.static("public"))
+
 
 function mymiddleware(req, res, next){
     console.log("inside the Middleware")
     next();
 };
 
-app.get("/", (req, res, next) =>{
-    res.end("welcome")
-});
 
 // stitch the routes to the server
 require("./routes/idea.routes")(app);

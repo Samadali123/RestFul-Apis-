@@ -1,9 +1,13 @@
+const crypto = require('crypto');
+
+  const id = crypto.randomUUID();
+
 module.exports = {
 
     1:{
-        "id":1,
+        "id":id,
         "idea_name": "my greate idea",
-        "author_name":"Samad",
-        "idea description": " Samad's first great idea"
-    }
+        "idea_author":"Samad",
+        "idea_description": " Samad's first great idea"
+    },
 }
